@@ -20,7 +20,7 @@ function Home() {
     let { user,setUser2 } = useContext(AuthContext)
 
     useEffect(() => {
-      setSocket(io("http://localhost:8800"));
+      setSocket(io("https://simplemedia.onrender.com/"));
     },[])
 
     useEffect(() => {
@@ -38,7 +38,7 @@ function Home() {
     const getPost = async() => {
         try{
           if(user?.username){
-            const posts = await axios.get(`http://localhost:8800/api/posts/`)
+            const posts = await axios.get(`https://simplemedia.onrender.com/api/posts/`)
             setPost(posts.data)
           }else{
             setUser2(true)
@@ -57,7 +57,7 @@ function Home() {
         socket.emit("sendNotification", {
           senderName: user?.username,
           receiverName: receiver,
-          img : `http://localhost:8800/${img}`,
+          img : `https://simplemedia.onrender.com/${img}`,
         });
       }else{
         setUser2(true)
@@ -69,7 +69,7 @@ function Home() {
    const deleteList = async(id) => {
   
     try{
-      const res = axios.delete("http://localhost:8800/api/posts/" + id)
+      const res = axios.delete("https://simplemedia.onrender.com/api/posts/" + id)
       .then(() => getPost())
     }catch(err){
     console.log(err)

@@ -21,7 +21,7 @@ function AddPost() {
         formData.append('username', user?.username)
         
         try{
-            const res = await axios.post(`http://localhost:8800/api/posts/`,formData)
+            const res = await axios.post(`https://simplemedia.onrender.com/api/posts/`,formData)
             window.location.reload(false);
            }catch(err){
             console.log(err)

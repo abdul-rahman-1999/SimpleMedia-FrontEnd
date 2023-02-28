@@ -34,7 +34,7 @@ function Register() {
   let addUser = async(newList) => {
 
     try{
-      const res = await axios.post(`http://localhost:8800/api/auth/register`,newList)
+      const res = await axios.post(`https://simplemedia.onrender.com/api/auth/register`,newList)
       if(res.data){
         if (res.data.msg === "Registered Successfully") {
                       toast.success('Account Created Successfully', {

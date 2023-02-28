@@ -15,7 +15,7 @@ export const AuthContextProvider = ({children}) => {
       let email = localStorage.getItem("email")
       try{
         if(email){
-          const res = await axios.get("http://localhost:8800/api/auth/" + email)
+          const res = await axios.get("https://simplemedia.onrender.com/api/auth/" + email)
           setUser(res.data)
         }
        }catch(err){

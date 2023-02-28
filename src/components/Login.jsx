@@ -38,7 +38,7 @@ function Login() {
   let addList = async(newUser) => {
 
     try{
-      const res = await axios.post(`http://localhost:8800/api/auth/login`,newUser)
+      const res = await axios.post(`https://simplemedia.onrender.com/api/auth/login`,newUser)
       if(res.data){ 
         setUser(res.data.user)
         if (res.data.msg === "Login Successfully") {
