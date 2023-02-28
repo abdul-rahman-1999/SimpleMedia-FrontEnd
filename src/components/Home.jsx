@@ -100,7 +100,7 @@ function Home() {
         height:"350px"
       }}
       alt="The house from the offer."
-      src={`http://localhost:8800/${e?.img}`}
+      src={`https://simplemedia.onrender.com/${e?.img}`}
       />
 
       <Box sx={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"15px"}}>
